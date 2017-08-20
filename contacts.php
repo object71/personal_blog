@@ -9,14 +9,16 @@
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT']."/configurations/navigation.php"; ?>
         <main>
-            <address class="content scroll-dark">
+            <div class="content scroll-dark">
                 <h1>Contacts</h1>
                 <hr />
-                <p>
-                    Name: Hristo Stamenov <br />
-                    E-mail: <a href="mailto:capitane71@gmail.com">capitane71@gmail.com</a> <br />
-                </p>
-            </address>
+                <address>
+                    <p>
+                        Name: Hristo Stamenov <br />
+                        E-mail: <a href="mailto:capitane71@gmail.com">capitane71@gmail.com</a> <br />
+                    </p>
+                </address>
+            </div>
         </main>
     </body>
 </html>
