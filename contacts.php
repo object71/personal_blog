@@ -15,6 +15,7 @@
                 <address>
                     <p>
                         Name: Hristo Stamenov <br />
+                        Location: Bulgaria, Sofia <br />
                         E-mail: <a href="mailto:capitane71@gmail.com">capitane71@gmail.com</a> <br />
                     </p>
                 </address>
