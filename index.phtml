@@ -5,13 +5,14 @@
 
     global $database;
 
+    $COUNT_PER_PAGE = 12;
     $count = $database->getValue("posts", "count(*)");
-    $query = "SELECT id, title, description, createdOn FROM posts ORDER BY createdOn DESC LIMIT 12";
+    $query = "SELECT id, title, description, createdOn FROM posts ORDER BY createdOn DESC LIMIT $COUNT_PER_PAGE";
 
     if(isset($_REQUEST["page"]) && is_numeric($_REQUEST["page"])) {
         $page = $_GET["page"];
-        if($page > 1 && $page - 1 <= floor($count / 12)) {
-            $query .= " OFFSET " . (($page - 1) * 12);
+        if($page > 1 && $page - 1 <= floor($count / $COUNT_PER_PAGE)) {
+            $query .= " OFFSET " . (($page - 1) * $COUNT_PER_PAGE);
         }
     }
 
@@ -50,7 +51,7 @@
             <div class="row">
                 <ul class="col-sm-12 pagination">
                     <?php
-                        $pagesCount = floor(($count / 12) + 1);
+                        $pagesCount = floor(($count / $COUNT_PER_PAGE) + 1);
 
                         if($pagesCount == 1) {
                             echo "<li class='disabled'><a href='/index.php?page=1'>1</a></li>";
