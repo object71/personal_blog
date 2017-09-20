@@ -7,6 +7,10 @@
     if(!($auth->isAuthorized())) {
         redirect("/login.php");
     } else {
+        if(isset($_REQUEST["id"]) && is_numeric($_REQUEST["id"])) {
+            $id = $_REQUEST["id"];
+            $query = "SELECT id, title, description, content, name FROM posts JOIN users ON users.id = posts.authorId WHERE posts.id = " . $id;
+            $post = $database->rawQueryOne($query);
 ?>
 
 <html>
@@ -14,23 +18,26 @@
         <?php include $_SERVER['DOCUMENT_ROOT']."/configurations/head.php"; ?>
     </head>
     <body>
+        <?php include $_SERVER['DOCUMENT_ROOT']."/configurations/navigation.php"; ?>
         <div class="container-fluid">
-            <form method="POST" action="/actions/add-post.php" class="fullheight">
-                <div class="row fullheight">
-                    <div class="col-sm-4 fullheight">
+            <form method="POST" action="/actions/edit-post.php" class="fullheight">
+                <input type="hidden" name="postId" value="<?= post["id"]?>"
+                <div class="row">
+                    <div class="col-sm-12">
                         <div class="col-sm-12">
-                            <input class="form-control" placeholder="Title" required type='text' name='title' /><br />
+                            <input class="form-control" placeholder="Title" required type='text' name='title' value="<?= post["title"]?>" /><br />
                         </div>
                         <div class="col-sm-12">
-                            <input class="form-control" placeholder="Description" required type='text' name='description' /><br />
+                            <input class="form-control" placeholder="Description" required type='text' name='description' value="<?= post["description"]?>" /><br />
                         </div>
-                        <input type="hidden" name="authorId" value=<?= $auth->getUserId(); ?>>
                         <div class="col-sm-12">
                             <button class="btn btn-primary" type='submit' >Submit</button>
                         </div>
                     </div>
-                    <div class="col-sm-8 fullheight" style="padding: 5px;">
-                        <textarea id="editor" class="editor" name="content"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="padding: 5px 25px 5px 35px;">
+                        <textarea id="editor" class="editor form-control" name="content"><?= post["content"]?></textarea>
                     </div>
                 </div>
             </from>
@@ -39,5 +46,8 @@
 </html>
 
 <?php
+        } else {
+            redirect("/index.php");
+        }
     }
 ?>

@@ -5,7 +5,7 @@
 
     global $database;
 
-    $COUNT_PER_PAGE = 12;
+    $COUNT_PER_PAGE = 4;
     $count = $database->getValue("posts", "count(*)");
     $query = "SELECT id, title, description, createdOn FROM posts ORDER BY createdOn DESC LIMIT $COUNT_PER_PAGE";
 
@@ -27,17 +27,17 @@
         <?php include $_SERVER['DOCUMENT_ROOT']."/configurations/navigation.php"; ?>
         <main>
             <div class="container-fluid">
-                <div class="row">
+                <div class="row cards">
                     <?php
                         foreach($posts as $post) {
                     ?>
-                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 card">
+                        <div class="card col-sm-4">
                             <div class="card-hr" style="background-color: #df691a;"></div>
                             <div class="card-block">
                                 <h3 class="card-title"><?= $post["title"] ?></h4>
                                 <p class="card-text" style="font-size: 12pt;"><?= $post["description"] ?></p>
                             </div>
-                            <div class="card-block" style="bottom: 15px; position: absolute;">
+                            <div class="card-actions">
                                 <a href="view-post.php?id=<?= $post["id"]; ?>" class="card-link">Read more</a>
                             </div>
                         </div>

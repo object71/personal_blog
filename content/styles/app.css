@@ -57,9 +57,19 @@ header.navbar {
     justify-content: center;
 }
 
+.cards {
+    /* display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    justify-content: space-between; */
+}
+
 .card {
     min-height: 300px;
     max-height: 300px;
+    min-width: 480px;
     max-width: 650px;
     background-color: #ebebeb;
     color: #2b3e50;
@@ -72,6 +82,11 @@ header.navbar {
     word-wrap: break-word;
     overflow-x: visible;
     overflow-wrap: break-word;
+}
+
+.card-actions {
+  bottom: 15px;
+  position: absolute;
 }
 
 ul.nav-tabs li.active {
