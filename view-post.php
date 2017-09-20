@@ -27,6 +27,15 @@
                 <?= $post["content"] ?>
                 <p><i><?= date_format(date_create($post["createdOn"]),"d/m/Y") . " - " . $post["name"] ?></i></p>
             </article>
+            <?php
+                if(!($auth->isAuthorized())) {
+            ?>
+            <div class="col-sm-12">
+                <a class="btn btn-primary" href="/storyteller/edit-post.php?id=<?= $id ?>" >Edit</a>
+            </div>
+            <?php
+                }
+            ?>
         <main>
     </body>
 </html>
