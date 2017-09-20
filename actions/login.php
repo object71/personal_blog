@@ -12,7 +12,7 @@
     if($usersCount == 0) {
 
         $data = Array(
-            "name" => "hristo stamenov",
+            "name" => "Hristo Stamenov",
             "username" => "admin",
             "password" => password_hash("admin", PASSWORD_DEFAULT),
         );
