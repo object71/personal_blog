@@ -10,11 +10,11 @@
         global $database;
 
         $id = $_POST["postId"];
+
         $data = Array(
             "title" => $_POST["title"],
             "description" => $_POST["description"],
-            "content" => $_POST["content"],
-            "authorId" => $_POST["authorId"],
+            "content" => $_POST["content"]
         );
         $database->where("id", $id);
         $database->update("posts", $data);
