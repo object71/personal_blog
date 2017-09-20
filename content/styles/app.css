@@ -67,13 +67,15 @@ header.navbar {
 }
 
 .card {
-    min-height: 300px;
-    max-height: 300px;
-    min-width: 480px;
-    max-width: 650px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 25px;
+    min-height: 350px;
+    max-height: 350px;
+    min-width: 430px;
+    max-width: 480px;
     background-color: #ebebeb;
     color: #2b3e50;
-    margin: 15px;
     padding-top: 15px;
     box-shadow: inset 0px 10px 8px -10px #2b3e50, inset 0px -10px 8px -10px #2b3e50, 12px 0px 8px -10px #1e2c3a, -12px 0px 8px -10px #1e2c3a;
 }

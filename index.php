@@ -5,7 +5,7 @@
 
     global $database;
 
-    $COUNT_PER_PAGE = 4;
+    $COUNT_PER_PAGE = 12;
     $count = $database->getValue("posts", "count(*)");
     $query = "SELECT id, title, description, createdOn FROM posts ORDER BY createdOn DESC LIMIT $COUNT_PER_PAGE";
 

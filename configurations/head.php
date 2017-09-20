@@ -4,7 +4,7 @@
         "/content/styles/bootstrap-theme.min.css",
         "/content/styles/font.css",
         "/vendors/ckeditor/skins/moono-lisa/editor.css",
-        "/vendors/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css",        
+        "/vendors/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css",
         "/vendors/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css",
         "/content/styles/mCustomScrollbar.min.css",
         "/content/styles/app.css"
@@ -30,5 +30,5 @@
     }
 ?>
 
-<link rel='shortcut icon' type='image/png' href='/content/images/wolf-icon.png' />
+<link rel='shortcut icon' type='image/png' href='/content/images/avatar.png' />
 <title>Blog - Object71</title>
